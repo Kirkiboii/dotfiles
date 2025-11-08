@@ -47,13 +47,6 @@ vim.api.nvim_create_autocmd('BufEnter', {
   end,
 })
 
-vim.api.nvim_create_autocmd('BufEnter', {
-  pattern = vim.fn.stdpath('config') .. '/init.lua',
-  callback = function()
-    vim.diagnostic.enable(false)
-  end,
-})
-
 vim.cmd(
   "set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz")
 
@@ -204,7 +197,6 @@ vim.keymap.set('n', '<leader>кт', vim.lsp.buf.rename)
 vim.keymap.set('n', '<leader>да', vim.lsp.buf.format)
 
 --Diagnostics keymap (Russian)
-vim.keymap.set('n', 'Ъв', vim.diagnostic.goto_prev)
+vim.keymap.set('n', 'хв', vim.diagnostic.goto_prev)
 vim.keymap.set('n', 'ъв', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>в', vim.diagnostic.open_float)
-
