@@ -58,17 +58,19 @@ vim.pack.add({
   { src = 'https://github.com/kdheepak/lazygit.nvim' },
   { src = 'https://github.com/catppuccin/nvim' },
   { src = 'https://github.com/kepano/flexoki-neovim' },
+  { src = 'https://github.com/nvim-lua/plenary.nvim' },
+  { src = 'https://github.com/MunifTanjim/nui.nvim' },
+  { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
   { src = 'https://github.com/nvim-mini/mini.pick' },
-  { src = 'https://github.com/nvim-mini/mini.files' },
   { src = 'https://github.com/nvim-mini/mini.pairs' },
   { src = 'https://github.com/nvim-mini/mini.surround' },
   { src = 'https://github.com/nvim-mini/mini.completion' },
   { src = 'https://github.com/nvim-mini/mini.comment' },
   { src = 'https://github.com/nvim-mini/mini.statusline' },
   { src = 'https://github.com/nvim-mini/mini.starter' },
+  { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim' },
 })
 
-require('mason').setup()
 require('catppuccin').setup({
   flavour = 'auto',
   background = {
@@ -77,8 +79,9 @@ require('catppuccin').setup({
   },
 })
 vim.cmd.colorscheme 'flexoki'
+
+require('mason').setup()
 require('mini.pick').setup()
-require('mini.files').setup()
 require('mini.pairs').setup()
 require('mini.surround').setup()
 require('mini.completion').setup()
@@ -164,13 +167,12 @@ vim.keymap.set('i', 'jk', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', ':noh<CR>')
 vim.keymap.set('n', '<leader>w', ':write<CR>')
 vim.keymap.set('n', '<leader>q', ':quit<CR>')
-vim.keymap.set('n', '<leader>e', ':lua MiniFiles.open()<CR>')
---vim.keymap.set('n', '<leader>e', ':Ex<CR>')
+vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>')
 vim.keymap.set('n', '<leader>f', ':Pick files<CR>')
 vim.keymap.set('n', '<leader>/', ':Pick grep_live<CR>')
 vim.keymap.set('n', '<leader>b', ':Pick buffers<CR>')
 vim.keymap.set('n', '<leader>s', ':%s/')
-vim.keymap.set('v', '<leader>s', ':s/')
+vim.keymap.set('v', '<leader>s', ':s/\\(.*\\)/')
 vim.keymap.set('n', '<leader>g', ':LazyGit<CR>')
 
 --LSP keymap
@@ -192,11 +194,11 @@ vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
 
 vim.keymap.set('n', '<leader>ц', ':write<CR>')
 vim.keymap.set('n', '<leader>й', ':quit<CR>')
-vim.keymap.set('n', '<leader>у', ':lua MiniFiles.open()<CR>')
+vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>')
 vim.keymap.set('n', '<leader>а', ':Pick files<CR>')
 vim.keymap.set('n', '<leader>и', ':Pick buffers<CR>')
 vim.keymap.set('n', '<leader>ы', ':%s/')
-vim.keymap.set('v', '<leader>ы', ':s/')
+vim.keymap.set('v', '<leader>ы', ':s/\\(.*\\)/')
 vim.keymap.set('n', '<leader>п', ':LazyGit<CR>')
 
 --LSP keymap (Russian)

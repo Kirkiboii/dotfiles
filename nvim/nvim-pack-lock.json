@@ -32,6 +32,10 @@
       "rev": "dce9a4e",
       "src": "https://github.com/nvim-mini/mini.files"
     },
+    "mini.icons": {
+      "rev": "ff2e4f1",
+      "src": "https://github.com/nvim-mini/mini.icons"
+    },
     "mini.pairs": {
       "rev": "b316e68",
       "src": "https://github.com/nvim-mini/mini.pairs"
@@ -52,13 +56,33 @@
       "rev": "88c5229",
       "src": "https://github.com/nvim-mini/mini.surround"
     },
+    "neo-tree.nvim": {
+      "rev": "f3df514",
+      "src": "https://github.com/nvim-neo-tree/neo-tree.nvim"
+    },
+    "nui.nvim": {
+      "rev": "de74099",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
     "nvim": {
       "rev": "234fc04",
       "src": "https://github.com/catppuccin/nvim"
     },
+    "nvim-tree.lua": {
+      "rev": "68c67ad",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
+    },
+    "nvim-web-devicons": {
+      "rev": "8dcb311",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
     "oil.nvim": {
       "rev": "7e1cd77",
       "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "plenary.nvim": {
+      "rev": "b9fd522",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "sidekick.nvim": {
       "rev": "c2bdf8c",
