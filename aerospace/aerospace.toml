@@ -30,6 +30,7 @@ automatically-unhide-macos-hidden-apps = false
 
     alt-minus = 'resize smart -50'
     alt-equal = 'resize smart +50'
+    alt-0 = 'flatten-workspace-tree'
     alt-enter = 'fullscreen'
     alt-cmd-ctrl-enter = 'macos-native-fullscreen'
     alt-shift-f= 'layout tiling floating'
@@ -50,8 +51,8 @@ automatically-unhide-macos-hidden-apps = false
 
     alt-shift-semicolon = 'mode service'
 
-    "alt-b" = "exec-and-forget open -a /Applications/Safari.app"
-    # "alt-b" = "exec-and-forget open -a /Applications/Helium.app"
+    # "alt-b" = "exec-and-forget open -a /Applications/Safari.app"
+    "alt-b" = "exec-and-forget open -a /Applications/Helium.app"
     "alt-o" = "exec-and-forget open -a /Applications/Obsidian.app"
     "alt-x" = "exec-and-forget open -a /Applications/Ghostty.app"
     "alt-t" = "exec-and-forget open -a /Applications/Telegram.app"

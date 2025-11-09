@@ -81,7 +81,12 @@ require('catppuccin').setup({
 vim.cmd.colorscheme 'flexoki'
 
 require('mason').setup()
-require('mini.pick').setup()
+require('mini.pick').setup({
+  options = {
+    content_from_bottom = true,
+    use_cache = true,
+  },
+})
 require('mini.pairs').setup()
 require('mini.surround').setup()
 require('mini.completion').setup()
@@ -194,7 +199,7 @@ vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
 
 vim.keymap.set('n', '<leader>ц', ':write<CR>')
 vim.keymap.set('n', '<leader>й', ':quit<CR>')
-vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>')
+vim.keymap.set('n', '<leader>у', ':Neotree toggle<CR>')
 vim.keymap.set('n', '<leader>а', ':Pick files<CR>')
 vim.keymap.set('n', '<leader>и', ':Pick buffers<CR>')
 vim.keymap.set('n', '<leader>ы', ':%s/')

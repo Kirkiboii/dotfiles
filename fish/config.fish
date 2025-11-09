@@ -17,5 +17,6 @@ if status is-interactive
 
     set -gx PATH $PATH /Users/kote/Library/pnpm
     set -gx PATH $PATH ~/.local/share/bob/nvim-bin
+    set -gx RIPGREP_CONFIG_PATH "$HOME/dotfiles/.ripgreprc"
 
 end
