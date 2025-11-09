@@ -1,4 +1,4 @@
-include ~/.config/newsboat/colors/flexoki
+include ~/.config/newsboat/colors/terminal
 
 browser "open -a Safari %u"
 

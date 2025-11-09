@@ -78,7 +78,7 @@ require('catppuccin').setup({
     dark = 'mocha',
   },
 })
-vim.cmd.colorscheme 'flexoki'
+vim.cmd.colorscheme 'catppuccin'
 
 require('mason').setup()
 require('mini.pick').setup({
