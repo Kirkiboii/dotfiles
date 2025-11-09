@@ -68,6 +68,7 @@ vim.pack.add({
   { src = 'https://github.com/nvim-mini/mini.comment' },
   { src = 'https://github.com/nvim-mini/mini.statusline' },
   { src = 'https://github.com/nvim-mini/mini.starter' },
+  { src = 'https://github.com/nvim-mini/mini.files' },
   { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim' },
 })
 
@@ -78,7 +79,7 @@ require('catppuccin').setup({
     dark = 'mocha',
   },
 })
-vim.cmd.colorscheme 'catppuccin'
+vim.cmd.colorscheme 'flexoki'
 
 require('mason').setup()
 require('mini.pick').setup({
@@ -92,6 +93,7 @@ require('mini.surround').setup()
 require('mini.completion').setup()
 require('mini.comment').setup()
 require('mini.statusline').setup()
+require('mini.files').setup()
 
 local starter = require('mini.starter')
 
@@ -172,7 +174,8 @@ vim.keymap.set('i', 'jk', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', ':noh<CR>')
 vim.keymap.set('n', '<leader>w', ':write<CR>')
 vim.keymap.set('n', '<leader>q', ':quit<CR>')
-vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>')
+vim.keymap.set('n', '<leader>e', ':lua MiniFiles.open()<CR>')
+-- vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>')
 vim.keymap.set('n', '<leader>f', ':Pick files<CR>')
 vim.keymap.set('n', '<leader>/', ':Pick grep_live<CR>')
 vim.keymap.set('n', '<leader>b', ':Pick buffers<CR>')
@@ -199,7 +202,8 @@ vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
 
 vim.keymap.set('n', '<leader>ц', ':write<CR>')
 vim.keymap.set('n', '<leader>й', ':quit<CR>')
-vim.keymap.set('n', '<leader>у', ':Neotree toggle<CR>')
+vim.keymap.set('n', '<leader>у', ':lua MiniFiles.open()<CR>')
+-- vim.keymap.set('n', '<leader>у', ':Neotree toggle<CR>')
 vim.keymap.set('n', '<leader>а', ':Pick files<CR>')
 vim.keymap.set('n', '<leader>и', ':Pick buffers<CR>')
 vim.keymap.set('n', '<leader>ы', ':%s/')
