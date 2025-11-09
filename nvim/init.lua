@@ -53,6 +53,9 @@ vim.cmd(
 --Plugins
 
 vim.pack.add({
+  { src = 'https://github.com/mason-org/mason.nvim' },
+  { src = 'https://github.com/mason-org/mason-lspconfig.nvim' },
+  { src = 'https://github.com/kdheepak/lazygit.nvim' },
   { src = 'https://github.com/catppuccin/nvim' },
   { src = 'https://github.com/kepano/flexoki-neovim' },
   { src = 'https://github.com/nvim-mini/mini.pick' },
@@ -61,17 +64,10 @@ vim.pack.add({
   { src = 'https://github.com/nvim-mini/mini.surround' },
   { src = 'https://github.com/nvim-mini/mini.completion' },
   { src = 'https://github.com/nvim-mini/mini.comment' },
-  { src = 'https://github.com/mason-org/mason.nvim' },
-  { src = 'https://github.com/mason-org/mason-lspconfig.nvim' },
-  { src = 'https://github.com/kdheepak/lazygit.nvim' },
+  { src = 'https://github.com/nvim-mini/mini.statusline' },
+  { src = 'https://github.com/nvim-mini/mini.starter' },
 })
 
-require('mini.pick').setup()
-require('mini.files').setup()
-require('mini.pairs').setup()
-require('mini.surround').setup()
-require('mini.completion').setup()
-require('mini.comment').setup()
 require('mason').setup()
 require('catppuccin').setup({
   flavour = 'auto',
@@ -80,8 +76,23 @@ require('catppuccin').setup({
     dark = 'mocha',
   },
 })
-
 vim.cmd.colorscheme 'flexoki'
+require('mini.pick').setup()
+require('mini.files').setup()
+require('mini.pairs').setup()
+require('mini.surround').setup()
+require('mini.completion').setup()
+require('mini.comment').setup()
+require('mini.statusline').setup()
+
+local starter = require('mini.starter')
+
+starter.setup({
+  items = {
+    starter.sections.recent_files(5, true, false),
+  },
+  footer = '',
+})
 
 --LSP
 

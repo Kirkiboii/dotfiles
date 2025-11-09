@@ -40,6 +40,14 @@
       "rev": "08a7220",
       "src": "https://github.com/nvim-mini/mini.pick"
     },
+    "mini.starter": {
+      "rev": "8ee6ce6",
+      "src": "https://github.com/nvim-mini/mini.starter"
+    },
+    "mini.statusline": {
+      "rev": "1491990",
+      "src": "https://github.com/nvim-mini/mini.statusline"
+    },
     "mini.surround": {
       "rev": "88c5229",
       "src": "https://github.com/nvim-mini/mini.surround"
