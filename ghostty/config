@@ -4,7 +4,7 @@ command = "/opt/homebrew/bin/fish"
 
 # window-height = 32
 # window-width = 60
-font-size = 14
+font-size = 16
 
 macos-titlebar-style = tabs
 macos-option-as-alt = true
