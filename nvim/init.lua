@@ -4,12 +4,18 @@ vim.cmd(
 
 vim.g.mapleader = ' '
 vim.keymap.set('i', 'jk', '<Esc>')
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
 vim.keymap.set('n', '<Esc><Esc>', ':noh<CR>')
 vim.keymap.set('n', '<leader>w', ':write<CR>')
 vim.keymap.set('n', '<leader>q', ':quit<CR>')
+vim.keymap.set('n', '<Space>y', '"+y')
+vim.keymap.set('v', '<Space>y', '"+y')
 --(Russian)
 vim.keymap.set('n', '<leader>ц', ':write<CR>')
 vim.keymap.set('n', '<leader>й', ':quit<CR>')
+vim.keymap.set('n', '<Space>н', '"+y')
+vim.keymap.set('v', '<Space>н', '"+y')
 
 
 -- General settings
@@ -35,7 +41,6 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv('HOME') .. '/.config/nvim/undodir'
 vim.opt.undofile = true
-vim.opt.clipboard = 'unnamed'
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
