@@ -20,7 +20,7 @@ vim.keymap.set('v', '<Space>н', '"+y')
 
 -- General settings
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.signcolumn = 'yes:1'
 vim.opt.scrolloff = 8
 vim.opt.wrap = true
