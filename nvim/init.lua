@@ -112,15 +112,12 @@ vim.cmd.colorscheme 'flexoki'
 -- File sidebar
 vim.pack.add({
   { src = 'https://github.com/nvim-mini/mini.files' },
-  { src = 'https://github.com/nvim-neo-tree/neo-tree.nvim' },
 })
 require('mini.files').setup()
 
 vim.keymap.set('n', '<leader>e', ':lua MiniFiles.open()<CR>')
--- vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>')
 --(Russian)
 vim.keymap.set('n', '<leader>у', ':lua MiniFiles.open()<CR>')
--- vim.keymap.set('n', '<leader>у', ':Neotree toggle<CR>')
 
 
 -- Search stuff
@@ -175,24 +172,28 @@ vim.lsp.config('marksman', {
 })
 
 vim.lsp.config('tsgo', {
-  cmd = { 'tsgo', 'lsp', '--stdio' },  filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
+  cmd = { 'tsgo', 'lsp', '--stdio' },
+	filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
   root_markers = { 'package.json', 'tsconfig.json', 'jsconfig.json', '.git' },
 })
 
 vim.lsp.config('html', {
-  cmd = { 'html-lsp', '--stdio' },  filetypes = { 'html' },
+  cmd = { 'html-lsp', '--stdio' },
+	filetypes = { 'html' },
   root_markers = { 'package.json', '.git' },
   fallback = true,
 })
 
 vim.lsp.config('cssls', {
-  cmd = { 'css-lsp', '--stdio' },  filetypes = { 'css', 'scss', 'less' },
+  cmd = { 'css-lsp', '--stdio' },
+	filetypes = { 'css', 'scss', 'less' },
   root_markers = { 'package.json', '.git' },
   fallback = true,
 })
 
 vim.lsp.config('tailwindcss', {
-  cmd = { 'tailwindcss-language-server', '--stdio' },  filetypes = { 'html', 'css', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
+  cmd = { 'tailwindcss-language-server', '--stdio' },
+	filetypes = { 'html', 'css', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
   root_markers = { 'tailwind.config.js', 'tailwind.config.ts', 'tailwind.config.mjs', 'package.json', '.git' },
 })
 
