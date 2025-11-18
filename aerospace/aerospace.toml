@@ -52,10 +52,10 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-semicolon = 'mode service'
 
     # "alt-b" = "exec-and-forget open -a /Applications/Safari.app"
-    "alt-b" = "exec-and-forget open -a /Applications/Helium.app"
-    "alt-o" = "exec-and-forget open -a /Applications/Obsidian.app"
-    "alt-x" = "exec-and-forget open -a /Applications/Ghostty.app"
-    "alt-t" = "exec-and-forget open -a /Applications/Telegram.app"
+    # "alt-b" = "exec-and-forget open -a /Applications/Helium.app"
+    # "alt-o" = "exec-and-forget open -a /Applications/Obsidian.app"
+    # "alt-x" = "exec-and-forget open -a /Applications/Ghostty.app"
+    # "alt-t" = "exec-and-forget open -a /Applications/Telegram.app"
     
     [[on-window-detected]]
         if.app-name-regex-substring = 'Finder'
