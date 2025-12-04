@@ -21,6 +21,10 @@
     },
     "nvim-lspconfig": [],
     "nvim-web-devicons": [],
-    "plenary.nvim": []
+    "plenary.nvim": [],
+    "typst-preview.nvim": {
+      "rev": "87d0f3a",
+      "src": "https://github.com/chomosuke/typst-preview.nvim"
+    }
   }
 }

@@ -4,6 +4,7 @@ vim.cmd(
     "set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz")
 
 vim.g.mapleader = ' '
+vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('i', 'jk', '<Esc>')
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
@@ -17,6 +18,9 @@ vim.keymap.set('n', '<Tab>', ':bnext<CR>')
 vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>')
 vim.keymap.set('n', '<leader>dd', ':bd<CR>')
 --(Russian)
+vim.keymap.set('i', 'оо', '<Esc>')
+vim.keymap.set('n', 'о', 'gj')
+vim.keymap.set('n', 'л', 'gk')
 vim.keymap.set('n', '<leader>ц', ':write<CR>')
 vim.keymap.set('n', '<leader>й', ':quit<CR>')
 vim.keymap.set('n', '<Space>н', '"+y')
@@ -27,7 +31,7 @@ vim.keymap.set('n', '<leader>вв', ':bd<CR>')
 
 -- General settings
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.signcolumn = 'yes:1'
 vim.opt.scrolloff = 8
 vim.opt.wrap = true
@@ -92,7 +96,6 @@ vim.pack.add({
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
     { src = 'https://github.com/nvim-mini/mini.statusline' },
     { src = 'https://github.com/nvim-mini/mini.starter' },
-    { src = 'https://github.com/catppuccin/nvim' },
     { src = 'https://github.com/kepano/flexoki-neovim' },
 })
 
@@ -105,14 +108,6 @@ starter.setup({
     footer = '',
 })
 
-require('catppuccin').setup({
-    flavour = 'auto',
-    background = {
-        light = 'latte',
-        dark = 'mocha',
-    },
-})
-
 vim.cmd.colorscheme 'flexoki'
 
 
@@ -120,12 +115,40 @@ vim.cmd.colorscheme 'flexoki'
 vim.pack.add({
     { src = 'https://github.com/nvim-mini/mini.files' },
 })
-require('mini.files').setup()
+require('mini.files').setup({
+    content = {
+        filter = function(fs_entry)
+            return not vim.startswith(fs_entry.name, '.')
+        end,
+    },
+})
 
 vim.keymap.set('n', '<leader>e', ':lua MiniFiles.open()<CR>')
 --(Russian)
 vim.keymap.set('n', '<leader>у', ':lua MiniFiles.open()<CR>')
 
+local show_dotfiles = true
+
+local filter_show = function(fs_entry) return true end
+
+local filter_hide = function(fs_entry)
+    return not vim.startswith(fs_entry.name, '.')
+end
+
+local toggle_dotfiles = function()
+    show_dotfiles = not show_dotfiles
+    local new_filter = show_dotfiles and filter_show or filter_hide
+    MiniFiles.refresh({ content = { filter = new_filter } })
+end
+
+vim.api.nvim_create_autocmd('User', {
+    pattern = 'MiniFilesBufferCreate',
+    callback = function(args)
+        local buf_id = args.data.buf_id
+        -- Tweak left-hand side of mapping to your liking
+        vim.keymap.set('n', 'g.', toggle_dotfiles, { buffer = buf_id })
+    end,
+})
 
 -- Search stuff
 vim.pack.add({
@@ -152,9 +175,11 @@ vim.pack.add({
     { src = 'https://github.com/neovim/nvim-lspconfig' },
     { src = 'https://github.com/mason-org/mason.nvim' },
     { src = 'https://github.com/mason-org/mason-lspconfig.nvim' },
+    { src = 'https://github.com/chomosuke/typst-preview.nvim' },
 })
 
 require('mason').setup()
+require('typst-preview').setup()
 local mason_lspconfig = require('mason-lspconfig')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -167,6 +192,7 @@ require('mason-lspconfig').setup({
         'cssls',
         'tailwindcss',
         'ts_ls',
+        'tinymist',
     },
 
     handlers = {
@@ -247,3 +273,4 @@ vim.pack.add({
     { src = 'https://github.com/sourcegraph/amp.nvim' },
 })
 require('amp').setup({ auto_start = true, log_level = "info" })
+

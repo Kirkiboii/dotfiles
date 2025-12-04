@@ -2,10 +2,10 @@ shell-integration = fish
 
 command = "/opt/homebrew/bin/fish"
 
-# window-height = 32
-# window-width = 60
+window-height = 34
+window-width = 60
+font-size = 14
 
-font-size = 16
 # font-family = "Input Mono"
 font-family = "Input Mono Narrow"
 # font-family = "Input Mono Condensed"
