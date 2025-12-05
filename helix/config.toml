@@ -27,12 +27,6 @@ other-lines = 'warning'
 'C-p' = ':lsp-workspace-command'
 'tab' = ':buffer-next'
 'S-tab' = ':buffer-previous'
-C-g = [
-    ":write-all",
-    ":insert-output lazygit >/dev/tty",
-    ":redraw",
-    ":reload-all"
-]
 
 [keys.normal.space.d]
 'd' = ':buffer-close!'
