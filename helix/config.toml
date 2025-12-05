@@ -1,9 +1,9 @@
 # my lovely helix config
  
-theme = "flexoki_light"
+theme = "flexoki_dark"
 
 [editor]
-line-number = 'absolute'
+line-number = 'relative'
 soft-wrap.enable = true
 color-modes = true
 cursor-shape = { insert = 'bar', normal = 'block', select = 'block' }
